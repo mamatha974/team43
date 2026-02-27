@@ -1,0 +1,133 @@
+.profile-shell {
+  min-height: 100vh;
+  background: linear-gradient(140deg, #e8edf3 0%, #d4dee8 100%);
+  padding: 24px;
+}
+
+.profile-container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.profile-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 18px;
+  gap: 12px;
+}
+
+.profile-header h1 {
+  margin: 0;
+  font-size: 28px;
+  line-height: 1.2;
+  color: #11233b;
+}
+
+.profile-header p {
+  margin: 8px 0 0;
+  color: #4f6177;
+}
+
+.profile-link {
+  text-decoration: none;
+  background: #1f4e89;
+  color: #fff;
+  padding: 10px 14px;
+  border-radius: 8px;
+  font-weight: 600;
+}
+
+.profile-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.profile-card {
+  background: #fff;
+  border-radius: 12px;
+  border: 1px solid #d7e0ea;
+  padding: 16px;
+}
+
+.profile-card h2 {
+  margin: 0 0 12px;
+  font-size: 18px;
+  color: #123259;
+}
+
+.profile-field {
+  padding: 8px 0;
+  border-bottom: 1px solid #edf2f7;
+}
+
+.profile-field:last-child {
+  border-bottom: none;
+}
+
+.profile-label {
+  font-size: 12px;
+  color: #66758a;
+  margin-bottom: 2px;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+}
+
+.profile-value {
+  color: #1a2f4b;
+  font-weight: 600;
+}
+
+.profile-card-wide {
+  grid-column: 1 / -1;
+}
+
+.timeline {
+  display: grid;
+  gap: 10px;
+}
+
+.timeline-row {
+  border: 1px solid #dbe3ee;
+  background: #f7fbff;
+  border-radius: 10px;
+  padding: 10px 12px;
+  display: grid;
+  grid-template-columns: 160px 1fr 1fr;
+  gap: 8px;
+  align-items: center;
+}
+
+.timeline-date {
+  font-weight: 700;
+  color: #204067;
+}
+
+.timeline-ctc,
+.timeline-var,
+.timeline-note {
+  color: #355577;
+  font-size: 14px;
+}
+
+.profile-empty {
+  color: #6b7d92;
+  margin: 6px 0 0;
+}
+
+.profile-error {
+  color: #b92c2c;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+@media (max-width: 900px) {
+  .profile-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .timeline-row {
+    grid-template-columns: 1fr;
+  }
+}

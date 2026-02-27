@@ -2,10 +2,7 @@ function resolveUrl(path) {
   if (typeof path !== 'string' || !path) return path
   if (/^https?:\/\//i.test(path)) return path
 
-  const baseUrl = import.meta.env.VITE_BACKEND_URL
-  if (!baseUrl) {
-    throw new Error('VITE_BACKEND_URL is required (example: http://127.0.0.1:8000)')
-  }
+  const baseUrl = import.meta.env.VITE_BACKEND_URL || 'http://127.0.0.1:8000'
 
   return new URL(path, baseUrl).toString()
 }

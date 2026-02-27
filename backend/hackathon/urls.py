@@ -1,6 +1,32 @@
 from django.urls import path
 
-from .views import ApiForgotPasswordView, ApiLoginView, ApiLogoutView, ApiMeView, ApiOtpRequestView, ApiOtpVerifyView, ApiRegisterView, HealthView
+from .views import (
+    ApiForgotPasswordView, 
+    ApiLoginView, 
+    ApiLogoutView, 
+    ApiMeView, 
+    ApiOtpRequestView, 
+    ApiOtpVerifyView, 
+    ApiRegisterView, 
+    HealthView,
+    ApiEmployeeListView,
+    ApiEmployeeCreateView,
+    ApiEmployeeDetailView,
+    ApiEmployeeProfileView,
+    ApiEmployeeOnboardingView,
+    ApiOnboardingProgressView,
+    ApiEmployeeRoleChangeView,
+    ApiEmployeeExitWorkflowView,
+    ApiEmployeeDocumentsView,
+    ApiEmployeeDocumentStatusView,
+    ApiComplianceDashboardView,
+    ApiComplianceAlertsView,
+    ApiHeadcountReportView,
+    ApiJoinersLeaversReportView,
+    ApiCTCLevelDistributionReportView,
+    ApiComplianceStatusReportView,
+    ApiEmployeeExitView,
+)
 
 urlpatterns = [
     path('', HealthView.as_view(), name='health'),
@@ -11,4 +37,23 @@ urlpatterns = [
     path('api/otp/verify', ApiOtpVerifyView.as_view(), name='api_otp_verify'),
     path('api/home', ApiMeView.as_view(), name='api_home'),
     path('api/logout', ApiLogoutView.as_view(), name='api_logout'),
+    
+    # Employee Endpoints
+    path('api/employees', ApiEmployeeListView.as_view(), name='api_employee_list'),
+    path('api/employees/create', ApiEmployeeCreateView.as_view(), name='api_employee_create'),
+    path('api/employees/<str:emp_id>', ApiEmployeeDetailView.as_view(), name='api_employee_detail'),
+    path('api/employees/<str:emp_id>/profile', ApiEmployeeProfileView.as_view(), name='api_employee_profile'),
+    path('api/employees/<str:emp_id>/onboarding', ApiEmployeeOnboardingView.as_view(), name='api_employee_onboarding'),
+    path('api/onboarding/progress', ApiOnboardingProgressView.as_view(), name='api_onboarding_progress'),
+    path('api/employees/<str:emp_id>/role-changes', ApiEmployeeRoleChangeView.as_view(), name='api_employee_role_changes'),
+    path('api/employees/<str:emp_id>/exit-workflow', ApiEmployeeExitWorkflowView.as_view(), name='api_employee_exit_workflow'),
+    path('api/employees/<str:emp_id>/documents', ApiEmployeeDocumentsView.as_view(), name='api_employee_documents'),
+    path('api/employees/<str:emp_id>/documents/<int:doc_id>/status', ApiEmployeeDocumentStatusView.as_view(), name='api_employee_document_status'),
+    path('api/compliance/dashboard', ApiComplianceDashboardView.as_view(), name='api_compliance_dashboard'),
+    path('api/compliance/alerts', ApiComplianceAlertsView.as_view(), name='api_compliance_alerts'),
+    path('api/reports/headcount', ApiHeadcountReportView.as_view(), name='api_headcount_report'),
+    path('api/reports/joiners-leavers', ApiJoinersLeaversReportView.as_view(), name='api_joiners_leavers_report'),
+    path('api/reports/ctc-level-distribution', ApiCTCLevelDistributionReportView.as_view(), name='api_ctc_level_distribution_report'),
+    path('api/reports/compliance-status', ApiComplianceStatusReportView.as_view(), name='api_compliance_status_report'),
+    path('api/employees/<str:emp_id>/exit', ApiEmployeeExitView.as_view(), name='api_employee_exit'),
 ]

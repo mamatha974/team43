@@ -81,12 +81,6 @@ DATABASES = {
     },
 }
 
-if not DATABASES['default'].get('NAME'):
-    DATABASES['default'] = {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': ':memory:',
-    }
-
 
 # Internationalization
 # https://docs.djangoproject.com/en/5.2/topics/i18n/
